@@ -92,7 +92,7 @@ public class PopupPage extends BasicPage {
 		String value =  getLocationItem(locationName);
 		
 		
-		System.out.println(value);
+		
 		js.executeScript("arguments[0].value=arguments[1];", path, value);
 		
 		Thread.sleep(3000);

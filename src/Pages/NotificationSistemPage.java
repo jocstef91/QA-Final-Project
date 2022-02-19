@@ -41,7 +41,7 @@ public class NotificationSistemPage extends BasicPage{
 	}
 	
 	public void whaitMsgToDisapear() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.attributeToBe(By.xpath("//*[contains(@class, 'system_message')]"), "style", "display: none;"));
 		
 		
