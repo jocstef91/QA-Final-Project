@@ -44,6 +44,8 @@ public class LoginPage extends BasicPage {
 	
 	public void fillLoginData(String username, String password) {
 		
+		username().clear();
+		password().clear();
 		username().sendKeys(username);
 		password().sendKeys(password);
 		
