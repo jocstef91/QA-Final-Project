@@ -144,7 +144,7 @@ public class ProfilPage extends BasicPage {
 	    
 	}
 	
-	public void getDeleteImgBtn() {
+	public void DeleteImgBtn() {
 		getprofileBtn();
 		WebElement imgDel = driver.findElement(By.xpath("//a[@title='Remove']"));
 		js.executeScript("arguments[0].click();", imgDel);

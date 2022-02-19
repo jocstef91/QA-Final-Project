@@ -1,5 +1,7 @@
 package Tests;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
@@ -22,6 +24,7 @@ import Pages.ProfilPage;
 
 public abstract class BasicTest {
 	
+	protected String mesage;
 	protected String username;
 	protected String password;
 	protected String baseUrl;
@@ -40,7 +43,7 @@ public abstract class BasicTest {
 	
 	
 	public BasicTest() {
-		
+		this.mesage=mesage;
 		this.username="customer@dummyid.com";
 		this.password="12345678a";
 		this.baseUrl="http://demo.yo-meals.com/";
@@ -50,7 +53,7 @@ public abstract class BasicTest {
 
 
 	@BeforeMethod
-	public void beforeMethod() {
+	public void beforeMethod() throws IOException {
 		System.setProperty("webdriver.chrome.driver", 
 				"driver-lib\\chromedriver.exe");
 		driver = new ChromeDriver();
@@ -60,6 +63,7 @@ public abstract class BasicTest {
 		
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		js = (JavascriptExecutor) driver;
+		
 		
 		popup = new PopupPage(driver, wait, js);
 		login = new LoginPage(driver, wait, js);

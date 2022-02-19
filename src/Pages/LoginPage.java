@@ -48,6 +48,7 @@ public class LoginPage extends BasicPage {
 		password().clear();
 		username().sendKeys(username);
 		password().sendKeys(password);
+		loginSubmit().click();
 		
 	}
 
